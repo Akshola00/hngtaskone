@@ -20,7 +20,7 @@ def hello(request):
     if not visitor_name:
         return Response({'error': 'Visitor name is required.'}, status=400)
     
-    url = f'http://api.weatherapi.com/v1/current.json?key={myapikey}&q={Ipaddr}&aqi=no'
+    url = f'http://api.weatherapi.com/v1/current.json?key={myapikey}&q={user_ip}&aqi=no'
     urlresponse = requests.get(url)
 
     if urlresponse.status_code == 200:
